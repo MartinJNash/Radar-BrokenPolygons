@@ -13,6 +13,7 @@
 		C68C2D951991F37300998FE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68C2D941991F37300998FE7 /* Images.xcassets */; };
 		C68C2D981991F37300998FE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68C2D961991F37300998FE7 /* Main.storyboard */; };
 		C68C2DA41991F37300998FE7 /* BrokenPolygonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68C2DA31991F37300998FE7 /* BrokenPolygonsTests.swift */; };
+		C68C2DAE1991F38300998FE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68C2DAD1991F38300998FE7 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		C68C2D9D1991F37300998FE7 /* BrokenPolygonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrokenPolygonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68C2DA21991F37300998FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68C2DA31991F37300998FE7 /* BrokenPolygonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenPolygonsTests.swift; sourceTree = "<group>"; };
+		C68C2DAD1991F38300998FE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C68C2DAF1991F38300998FE7 /* BrokenPolygons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BrokenPolygons.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68C2DAE1991F38300998FE7 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 		C68C2D801991F37300998FE7 = {
 			isa = PBXGroup;
 			children = (
+				C68C2DAD1991F38300998FE7 /* MapKit.framework */,
 				C68C2D8B1991F37300998FE7 /* BrokenPolygons */,
 				C68C2DA01991F37300998FE7 /* BrokenPolygonsTests */,
 				C68C2D8A1991F37300998FE7 /* Products */,
@@ -77,6 +82,7 @@
 		C68C2D8B1991F37300998FE7 /* BrokenPolygons */ = {
 			isa = PBXGroup;
 			children = (
+				C68C2DAF1991F38300998FE7 /* BrokenPolygons.entitlements */,
 				C68C2D901991F37300998FE7 /* ViewController.swift */,
 				C68C2D921991F37300998FE7 /* AppDelegate.swift */,
 				C68C2D941991F37300998FE7 /* Images.xcassets */,
@@ -161,6 +167,12 @@
 				TargetAttributes = {
 					C68C2D881991F37300998FE7 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = ADJG9D9EQV;
+						SystemCapabilities = {
+							com.apple.Maps.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 					C68C2D9C1991F37300998FE7 = {
 						CreatedOnToolsVersion = 6.0;
@@ -328,10 +340,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrokenPolygons/BrokenPolygons.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BrokenPolygons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -339,10 +355,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrokenPolygons/BrokenPolygons.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BrokenPolygons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
